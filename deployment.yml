@@ -6,14 +6,14 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      app: web-app
+      app: web_app
   template:
     metadata:
       labels:
-        app: web-app
+        app: web_app
     spec:
       containers:
-        - name: web-app
+        - name: web_app
           image: shubh291998/webapp-repo:1.0
           ports:
             - containerPort: 8080
