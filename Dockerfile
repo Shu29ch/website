@@ -1,6 +1,13 @@
-FROM ubuntu
-RUN apt-get update -y
-RUN apt-get install -y apache2
-ADD .  /var/www/html
-ENTRYPOINT apachectl -D FOREGROUND 
-ENV name shubhangi chavhan
+FROM ubuntu:22.04
+
+RUN apt-get update -y && \
+    apt-get install -y apache2 && \
+    apt-get clean
+
+COPY . /var/www/html/
+
+ENV NAME="shubhangi chavhan"
+
+EXPOSE 80
+
+CMD ["apachectl", "-D", "FOREGROUND"]
